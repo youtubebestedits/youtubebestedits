@@ -1,0 +1,317 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #050505;
+  color: white;
+  overflow-x: hidden;
+}
+
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(#ff006a 1px, transparent 1px);
+  background-size: 80px 80px, 140px 140px;
+  animation: moveStars 25s linear infinite;
+  opacity: 0.25;
+  z-index: -1;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(12px);
+  z-index: 10;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff2b7a;
+  letter-spacing: 2px;
+}
+
+.channel-btn {
+  color: white;
+  text-decoration: none;
+  background: #ff0055;
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.channel-btn:hover {
+  background: white;
+  color: #ff0055;
+  transform: scale(1.08);
+}
+
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #000000, #220044, #ff0055);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 20px 60px;
+  text-align: center;
+}
+
+.hero-box {
+  max-width: 900px;
+  padding: 50px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 60px rgba(255,0,85,0.6);
+  animation: fadeUp 1.2s ease;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  padding: 10px 18px;
+  border-radius: 30px;
+  color: #ffb3d1;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 65px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 22px;
+  line-height: 1.6;
+  color: #eeeeee;
+  margin-bottom: 35px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 16px 32px;
+  border-radius: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn.main {
+  background: #ff0055;
+  color: white;
+  box-shadow: 0 0 25px rgba(255,0,85,0.8);
+}
+
+.btn.second {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+section {
+  padding: 90px 8%;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 42px;
+  color: #ff2b7a;
+  margin-bottom: 25px;
+}
+
+.about p,
+.contact p {
+  max-width: 850px;
+  margin: auto;
+  font-size: 22px;
+  line-height: 1.7;
+  color: #dddddd;
+}
+
+.cards,
+.price-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 35px;
+}
+
+.card,
+.price-card {
+  width: 300px;
+  background: #121212;
+  padding: 30px;
+  border-radius: 22px;
+  box-shadow: 0 0 25px rgba(255,0,85,0.25);
+  transition: 0.3s;
+}
+
+.card:hover,
+.price-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 0 40px rgba(255,0,85,0.7);
+}
+
+.card h3,
+.price-card h3 {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.card p,
+.price-card p {
+  color: #cccccc;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.price-card span {
+  display: block;
+  margin-top: 18px;
+  color: #ff2b7a;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.premium {
+  border: 2px solid #ff0055;
+}
+
+.contact {
+  background: linear-gradient(135deg, #130020, #090909);
+}
+
+.contact .btn {
+  display: inline-block;
+  margin-top: 30px;
+}
+
+footer {
+  padding: 25px;
+  text-align: center;
+  background: #030303;
+  color: #999;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveStars {
+  from {
+    background-position: 0 0, 0 0;
+  }
+
+  to {
+    background-position: 500px 500px, -500px 300px;
+  }
+}
+
+@media (max-width: 700px) {
+  header {
+    padding: 15px 5%;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .channel-btn {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .hero-box {
+    padding: 30px 20px;
+  }
+
+  section h2 {
+    font-size: 32px;
+  }
+}.contact-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.telegram-btn{
+    background:#27A5E7;
+    color:white;
+    text-decoration:none;
+    padding:18px 35px;
+    border-radius:50px;
+    font-size:20px;
+    font-weight:bold;
+    transition:.3s;
+    box-shadow:0 0 25px rgba(39,165,231,.6);
+}
+
+.telegram-btn:hover{
+    transform:translateY(-6px) scale(1.05);
+    box-shadow:0 0 40px rgba(39,165,231,1);
+}
+
+.youtube-btn{
+    background:#ff0000;
+    color:white;
+    text-decoration:none;
+    padding:18px 35px;
+    border-radius:50px;
+    font-size:20px;
+    font-weight:bold;
+    transition:.3s;
+    box-shadow:0 0 25px rgba(255,0,0,.6);
+}
+
+.youtube-btn:hover{
+    transform:translateY(-6px) scale(1.05);
+    box-shadow:0 0 40px rgba(255,0,0,1);
+}
